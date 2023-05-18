@@ -87,8 +87,8 @@ public class DriveGeneric extends CommandBase {
     double speed = controller.calculate(whereiam, dist);
     driver.driveit(speed*xdist/dist, speed*ydist/dist, 0, true);
 
-    //SmartDashboard.putString("Error", controller.getPositionError() + " < " + tol);
-    //SmartDashboard.putString("CurrentPose", currentpose.toString());
+    SmartDashboard.putString("DrivePosErr", controller.getPositionError() + " < " + tol);
+    SmartDashboard.putString("CurrentPose", currentpose.toString());
   }
 
   // Called once the command ends or is interrupted.

@@ -177,6 +177,7 @@ public final class Constants {
         public static final int kDriverResetGyroButtonIdx     = 1; // driverJoytick button A
         public static final int kDriverResetOdometryButtonIdx = 3; // driverJoytick button X
         public static final int BALANCE_AUGMENTER             = 4; //  driver stick Y button
+        public static final int DriveGenericTester            = 4; //  driver stick Y button
         public static final int kDriverFieldOrientedButtonIdx = 5; // driverJoytick button left-bumper
         
         public static final double kDeadband = 0.05;

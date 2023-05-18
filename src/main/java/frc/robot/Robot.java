@@ -196,11 +196,11 @@ public class Robot extends TimedRobot {
         //                    + " Y: " + String.format("%.3f", ySpeed)
         //                    + " R: " + String.format("%.3f", turningSpeed));
 
-        if (driverJoytick.getRawButton(OIConstants.BALANCE_AUGMENTER)) {
-            double augment = Math.sin(Math.toRadians(pigeon.getPitch()-1));
-            //System.out.println(augment);
-            smoothedXSpeed+=augment*.036;
-        }
+        // if (driverJoytick.getRawButton(OIConstants.BALANCE_AUGMENTER)) {
+        //     double augment = Math.sin(Math.toRadians(pigeon.getPitch()-1));
+        //     //System.out.println(augment);
+        //     smoothedXSpeed+=augment*.036;
+        // }
         xSpeed = smoothedXSpeed;
         ySpeed = smoothedYSpeed;
         turningSpeed = smoothedTurningSpeed;
@@ -264,6 +264,13 @@ public class Robot extends TimedRobot {
 
     /** This function is called periodically during test mode. */
     @Override
+
     public void testPeriodic() {
+        swerveSubsystem = m_robotContainer.getSwerveSS();
+        SmartDashboard.putNumber("FLabs", swerveSubsystem.getModules()[0].getAbsoluteEncoderRad());
+        SmartDashboard.putNumber("FRabs", swerveSubsystem.getModules()[1].getAbsoluteEncoderRad());
+        SmartDashboard.putNumber("BRabs", swerveSubsystem.getModules()[2].getAbsoluteEncoderRad());
+        SmartDashboard.putNumber("BLabs", swerveSubsystem.getModules()[3].getAbsoluteEncoderRad());
+
     }
 }

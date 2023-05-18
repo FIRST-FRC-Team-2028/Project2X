@@ -82,6 +82,8 @@ public class RobotContainer {
                 //new JoystickButton(buttonBox1, OIConstants.kgetAprilTagButton).
                         //onTrue(new GetAprilTag(camera));
         }
+        new JoystickButton(driverJoytick, OIConstants.DriveGenericTester).
+          onTrue(new DriveGeneric(swerveSubsystem, Units.feetToMeters(3.), 0));
      }
     
      public Command getAutonomousCommand() {
